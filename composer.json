@@ -1,0 +1,9 @@
+{
+    "name": "adamb/test",
+    "description": "yup",
+    "type": "project",
+    "require": {
+        "symfony/routing": "^4.0",
+        "symfony/http-foundation": "^4.0"
+    }
+}
