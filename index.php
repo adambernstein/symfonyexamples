@@ -31,12 +31,11 @@ $value = "CookieValue";
 $cookie_string = SplashCookie::getTestCookie($request, $name);
 $response = new Response();
 if ($cookie_string) {
-    echo "<p>Cookie: " . $cookie_string . "</p>";    
+    //echo "<p>Cookie: " . $cookie_string . "</p>";    
     $response->prepare($request);
     $response->send();
 }
 else {
-    echo "<p>No Cookie Set.</p>";
     SplashCookie::setTestCookie($request, $name, $current_host);
     $redir_response = new RedirectResponse('https://adambernste.in', 302);
     //$redir_response->setTargetUrl();
@@ -44,3 +43,12 @@ else {
 }
 
 
+$html = "<!DOCTYPE html>";
+$html.= "<html>";
+$html.= "<head></head>";
+$html.= "<body>";
+$html.= "    <h1>Cookie: " . $cookie_string . "</h1>";
+$html.= "</body>";
+$html.= "</html>";
+
+echo $html;
